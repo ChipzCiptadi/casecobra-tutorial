@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWrapper";
-import { HTMLAttributes, useEffect, useRef, useState } from "react";
+import {
+  CSSProperties,
+  HTMLAttributes,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Phone from "./Phone";
@@ -69,6 +75,7 @@ const ReviewColumn = ({
 }: {
   reviews: string[];
   className?: string;
+  // eslint-disable-next-line no-unused-vars
   reviewClassName?: (reviewIndex: number) => string;
   msPerPixel?: number;
 }) => {
@@ -94,7 +101,7 @@ const ReviewColumn = ({
     <div
       ref={columnRef}
       className={cn("animate-marquee space-y-8 py-4", className)}
-      style={{ "--marquee-duration": duration } as React.CSSProperties}
+      style={{ "--marquee-duration": duration } as CSSProperties}
     >
       {reviews.concat(reviews).map((imgSrc, reviewIndex) => (
         <Review
