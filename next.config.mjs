@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  crossOrigin: "use-credentials",
   images: {
     remotePatterns: [
       {
@@ -7,19 +8,6 @@ const nextConfig = {
         hostname: "utfs.io",
       },
     ],
-  },
-  headers() {
-    return [
-      {
-        source: "/api/:path*",
-        headers: [
-          {
-            key: "Access-Control-Allow-Origin",
-            value: "*",
-          },
-        ],
-      },
-    ];
   },
 };
 
